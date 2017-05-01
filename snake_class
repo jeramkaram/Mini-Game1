@@ -1,0 +1,28 @@
+    import pygame
+
+    pygame.init()
+
+    class Snake():
+        def __init__(self):
+            self.image = pygame.image.load('snakehead2.png')
+            self.x = 320 #width/2
+            self.y = 200 #height/2
+            self.hit_points = 5
+
+        def handle_keys(self):
+            #GET_PRESSED RETURNS TRUE OR FALSE VALUES
+            key = pygame.key.get_pressed()
+            dist = 5
+            if key[pygame.K_DOWN]:
+                self.y += dist
+            elif key[pygame.K_UP]:
+                self.y -= dist
+            if key[pygame.K_RIGHT]:
+                self.x += dist
+            elif key[pygame.K_LEFT]:
+                self.x -= dist        
+
+        def draw(self, surface):
+            surface.blit(self.image, (self.x, self.y))
+
+
