@@ -1,0 +1,17 @@
+    import pygame
+
+    pygame.init()
+
+    class Bullets():
+        def __init__(self, x, y):
+
+            self.image = pygame.image.load('bullet.png')
+            self.x = x
+            self.y = y
+
+        def move(self):
+            self.y -= 4
+
+        def draw(self, surface):
+            surface.blit(self.image, (self.x, self.y))
+
